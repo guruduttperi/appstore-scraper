@@ -12,6 +12,8 @@ const fs = require('fs');
 var details = {id: "2222", appId: "2223", title: "2224", url: "2225"};
 
 
+// Trying to Write to file directly - Pretty sure my code is wrong since you can't store from console.log
+
 /*
 store.search({
   term: 'medicine',
@@ -27,6 +29,7 @@ if (err) throw console.log("Not Found");
 */
 //obj = JSON.parse(data);
 
+// Trying to store it in an object and write to file. Pretty sure my code is wrong
 /*
 var data = store.search({
   term: 'panda',
@@ -43,6 +46,7 @@ details = JSON.parse(data).catch(console.log);
 console.log(details);
 */
 
+// I think that this could work.
 details = store.search({
   term: 'health',
   num: 1,

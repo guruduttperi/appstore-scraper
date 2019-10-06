@@ -1,0 +1,16 @@
+{
+  "name": "searchjs",
+  "version": "1.0.0",
+  "description": "Searching for Apps on the App Store",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-writer": "^1.5.0",
+    "fast-csv": "^3.4.0",
+    "objects-to-csv": "^1.3.4"
+  }
+}

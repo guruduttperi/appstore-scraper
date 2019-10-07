@@ -9,10 +9,28 @@ const csvWriter = createCsvWriter({
 var txt =  new Object();
 //var data = new Object();
 const fs = require('fs');
-var details = {id: "2222", appId: "2223", title: "2224", url: "2225"};
+//var details = {id: "2222", appId: "2223", title: "2224", url: "2225"};
 
 
 // Trying to Write to file directly - Pretty sure my code is wrong since you can't store from console.log
+/*
+var details = store.search({
+  term: 'medicine',
+  num: 1,
+  page: 3,
+  country : 'us',
+  lang: 'lang'
+}).then(console.log)
+.catch(console.log);
+
+console.log("\n\n\n Printing the Stored Values");
+console.log(details);
+*/
+/*
+fs.writeFile('./data.json', JSON.stringify(details, null, 0), function(err) {
+  if(err) console.log(err)
+})
+*/
 
 /*
 store.search({
@@ -47,18 +65,24 @@ console.log(details);
 */
 
 // I think that this could work.
-details = store.search({
+
+{
+  details = store.search({
   term: 'health',
-  num: 1,
-  page: 1,
+  num: 100,
+  page: i,
   country : 'us',
   lang: 'lang'
 })
-.then(console.log)
+.then(data => { fs.writeFile('output.json', (JSON.stringify(data)))})
 .catch(console.log);
 
+//var apex = JSON.stringify(details);
 
-fs.writeFile('./data.json', JSON.stringify(details, null, 2));
+//fs.writeFile('./data.json', JSON.stringify(details, null, 2));
+/*fs.writeFile('a.csv', apex, function(err) {
+  if(err) console.log(err)
+}); */
 /*var obj = JSON.parse(txt);
 console.log(obj['id']);
 

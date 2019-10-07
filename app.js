@@ -12,6 +12,26 @@ const fs = require('fs');
 //var details = {id: "2222", appId: "2223", title: "2224", url: "2225"};
 
 
+//Working code
+
+details = store.search({
+term: 'wellbeing',
+num: 100,
+page: 3,
+country : 'us',
+lang: 'lang'
+})
+.then(data => { fs.writeFile('output.json', (JSON.stringify(data)))})
+.catch(console.log);
+
+
+/*
+ ---- These Are Alternate Approaches that I tried ----
+ ---- Still working on converting JSON to CSV ----
+
+*/
+
+
 // Trying to Write to file directly - Pretty sure my code is wrong since you can't store from console.log
 /*
 var details = store.search({
@@ -64,18 +84,6 @@ details = JSON.parse(data).catch(console.log);
 console.log(details);
 */
 
-// I think that this could work.
-
-{
-  details = store.search({
-  term: 'health',
-  num: 100,
-  page: i,
-  country : 'us',
-  lang: 'lang'
-})
-.then(data => { fs.writeFile('output.json', (JSON.stringify(data)))})
-.catch(console.log);
 
 //var apex = JSON.stringify(details);
 
